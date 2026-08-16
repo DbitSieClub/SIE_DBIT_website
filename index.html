@@ -13,6 +13,10 @@
 
     <link rel="shortcut icon" type="image/ico" href="assets/img/Logo-sie.png" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
     <link href="assets/css/plugins.css" rel="stylesheet">
     <link href="assets/css/plugins/bx-slider.css" rel="stylesheet">
     <link href="assets/css/theme.css" rel="stylesheet">
@@ -43,17 +47,18 @@
                 <nav class="navbar">
                     <div class="container">
                         <div class="row">
-                            <div class="col-4 navbar-header ">
-                                <a href="/" class="">
-                                    <!-- <img src="assets/img/Logo-sie.png" alt="logo" style="padding: 8px;"> -->
-                                    <h1>SIE CLUB</h1>
+                            <div class="col-4 navbar-header">
+                                <a href="#home" class="navbar-brand-logo">
+                                    <img src="assets/img/sie-official-logo.png" alt="SIE DBIT Logo" class="nav-logo-img">
+                                    <span class="nav-brand-text">SIE CLUB</span>
                                 </a>
                             </div>
                             <div class="col-8 mainmenu-and-right-button ">
                                 <div id="main-nav" class="stellarnav">
                                     <ul id="nav" class="nav navbar-nav">
                                         <li class="active"><a href="#home">Home</a></li>
-                                        <li><a href="#team">Team</a></li>
+                                        <li><a href="#awareness">Awareness</a></li>
+                                        <li><a href="#about">About</a></li>
                                         <!-- <li><a href="#features">Service</a></li>
                                         <li><a href="#about">About Us</a></li>
                                         <li><a href="#pricing">Pricing</a></li>
@@ -102,122 +107,185 @@
     <!--END TOP AREA-->
 
     <!--FEATURES TOP AREA-->
-    <section class="features-top-area padding-100-50 wow fadeIn" id="features">
+    <section class="features-top-area padding-top-100-70 wow fadeIn" id="features">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3 col-sm-12 col-xs-12">
+                <div class="col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2 col-sm-12 col-xs-12">
                     <div class="area-title text-center">
                         <h2>Our Mission</h2>
-                        <!-- <p>We are a non-profit organization that provide other NGOs and non-profit organizations with
-                            technological services.</p> -->
+                        <p class="mission-subtitle">Core principles guiding DBIT SIE Club towards campus sustainability</p>
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row mission-grid">
                 <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-                    <div class="text-icon-box bg-white relative mb50 padding20 box-hover-1 wow fadeInUp"
-                        data-wow-delay="0.1s">
-                        <div class="box-img-icon">
-                            <img src="assets/img/icon/content.webp" alt="">
+                    <div class="mission-card wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="mission-card-img">
+                            <img src="assets/img/mission-stewardship-bg.png" alt="Environmental Stewardship - Plant Protection & Soil Care">
                         </div>
-                        <h3 class="box-title">To instill a sense of responsibility for the environment and a personal 
-                            commitment to protect and preserve the environment.</h3>
+                        <div class="mission-card-body">
+                            <h3 class="mission-pillar-title">Environmental Stewardship</h3>
+                            <p class="mission-desc">Instilling a deep sense of responsibility towards the environment and a personal commitment to protect and preserve natural ecosystems.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-                    <div class="text-icon-box bg-white relative mb50 padding20 box-hover-1 wow fadeInUp"
-                        data-wow-delay="0.2s">
-                        <div class="box-img-icon">
-                            <img src="assets/img/icon/keyword.webp" alt="">
+                    <div class="mission-card wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="mission-card-img">
+                            <img src="assets/img/mission-netzero-campus.jpg" alt="Net Zero Campus - Carbon Neutral Green Campus">
                         </div>
-                        <h3 class="box-title">Create a carbon neutral campus(Net zero carbon emission).</h3>
-                        <p></p>
+                        <div class="mission-card-body">
+                            <h3 class="mission-pillar-title">Net Zero Campus</h3>
+                            <p class="mission-desc">Driving initiatives and sustainable campus practices aimed at creating a carbon neutral campus with net zero emissions.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-                    <div class="text-icon-box bg-white relative mb50 padding20 box-hover-1 wow fadeInUp"
-                        data-wow-delay="0.3s">
-                        <div class="box-img-icon">
-                            <img src="assets/img/icon/email-marketing.webp" alt="">
+                    <div class="mission-card wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="mission-card-img">
+                            <img src="assets/img/mission-training.jpg" alt="Empowerment & Training - Sustainability Projects & Training">
                         </div>
-                        <h3 class="box-title">Train students/faculty/staff to efficiently implement sustainability projects.</h3>
+                        <div class="mission-card-body">
+                            <h3 class="mission-pillar-title">Empowerment &amp; Training</h3>
+                            <p class="mission-desc">Training students, faculty, and staff to efficiently implement actionable sustainability and eco-engineering projects.</p>
+                        </div>
                     </div>
                 </div>
-                <!-- <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-                    <div class="text-icon-box bg-white relative mb50 padding20 box-hover-1 wow fadeInUp"
-                        data-wow-delay="0.1s">
-                        <div class="box-img-icon">
-                            <img src="assets/img/icon/link.webp" alt="">
-                        </div>
-                        <h3 class="box-title">Link Building</h3>
-                        <p>Starting with a full audit of your technical SEO presence means our efforts won’t be wasted
-                            on unnoticed structural problems.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-                    <div class="text-icon-box bg-white relative mb50 padding20 box-hover-1 wow fadeInUp"
-                        data-wow-delay="0.2s">
-                        <div class="box-img-icon">
-                            <img src="assets/img/icon/analitics.webp" alt="">
-                        </div>
-                        <h3 class="box-title">Market analysis</h3>
-                        <p>Starting with a full audit of your technical SEO presence means our efforts won’t be wasted
-                            on unnoticed structural problems.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-                    <div class="text-icon-box bg-white relative mb50 padding20 box-hover-1 wow fadeInUp"
-                        data-wow-delay="0.3s">
-                        <div class="box-img-icon">
-                            <img src="assets/img/icon/search.webp" alt="">
-                        </div>
-                        <h3 class="box-title">Search Strategy</h3>
-                        <p>Starting with a full audit of your technical SEO presence means our efforts won’t be wasted
-                            on unnoticed structural problems.</p>
-                    </div>
-                </div> -->
             </div>
         </div>
     </section>
     <!--FEATURES TOP AREA END-->
 
-    <!--REPORT AREA-->
-    <!-- <section class="report-area section-padding white relative">
-        <div class="area-bg"></div>
+    <!-- ENVIRONMENTAL AWARENESS SECTION -->
+    <section class="awareness-area padding-top-100-70 wow fadeIn" id="awareness" aria-labelledby="awareness-title">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3 col-sm-12 col-xs-12">
-                    <div class="area-title text-center">
-                        <h2>Get your SEO score instantly.</h2>
-                        <p>Over 55% of returns are in-effect just exchanges. Identify these opportunities in customer
-                            behavior.</p>
+                <div class="col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2 col-sm-12 col-xs-12">
+                    <div class="area-title text-center awareness-header">
+                        <h2 id="awareness-title">Environmental Awareness</h2>
+                        <p class="awareness-subtitle">Small actions. Meaningful change. A sustainable future.</p>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 col-xs-12">
-                    <div class="report-form">
-                        <form action="#">
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6 col-xs-12 mb30">
-                                    <input type="url" name="website" id="website" placeholder="Your_Website_Url"
-                                        required>
-                                </div>
-                                <div class="col-md-6 col-sm-6 col-xs-12 mb30">
-                                    <input type="email" name="email" id="email" placeholder="Your_Email_Address"
-                                        required>
-                                </div>
-                                <div class="col-md-12 col-xs-12 center">
-                                    <button type="submit">Get your website report</button>
-                                </div>
-                            </div>
-                        </form>
+            <div class="row awareness-grid">
+                <!-- 01 Waste Management -->
+                <div class="col-md-4 col-sm-6 col-xs-12 awareness-col">
+                    <div class="awareness-card wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="awareness-card-bg" style="background-image: url('assets/img/waste-management-bg.png');"></div>
+                        <div class="awareness-card-overlay"></div>
+                        <div class="awareness-card-top">
+                            <span class="awareness-number">01</span>
+                        </div>
+                        <div class="awareness-content">
+                            <h3 class="awareness-title">Waste Management</h3>
+                            <p class="awareness-desc">Waste segregation, recycling, composting and responsible disposal practices to minimize environmental impact.</p>
+                        </div>
+                        <a href="#awareness-modal" class="awareness-footer awareness-modal-trigger" data-title="Waste Management" data-desc="Waste segregation, recycling, composting and responsible disposal practices to minimize environmental impact." data-actions="Source segregation into wet, dry &amp; e-waste|Campus organic waste composting initiative|E-waste collection &amp; recycling drives|Single-use plastic reduction policy">
+                            <span>KEY FOCUS</span>
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 02 Water Conservation -->
+                <div class="col-md-4 col-sm-6 col-xs-12 awareness-col">
+                    <div class="awareness-card wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="awareness-card-bg" style="background-image: url('assets/img/water-conservation-bg.png');"></div>
+                        <div class="awareness-card-overlay"></div>
+                        <div class="awareness-card-top">
+                            <span class="awareness-number">02</span>
+                        </div>
+                        <div class="awareness-content">
+                            <h3 class="awareness-title">Water Conservation</h3>
+                            <p class="awareness-desc">Water conservation, rainwater harvesting initiatives and proactive measures to prevent water pollution.</p>
+                        </div>
+                        <a href="#awareness-modal" class="awareness-footer awareness-modal-trigger" data-title="Water Conservation" data-desc="Water conservation, rainwater harvesting initiatives and proactive measures to prevent water pollution." data-actions="Rainwater harvesting across campus buildings|Tap aerator installations to reduce flow wastage|Leakage reporting &amp; swift plumbing maintenance|Clean water protection &amp; pollution prevention">
+                            <span>KEY FOCUS</span>
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 03 Biodiversity Conservation -->
+                <div class="col-md-4 col-sm-6 col-xs-12 awareness-col">
+                    <div class="awareness-card wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="awareness-card-bg" style="background-image: url('assets/img/biodiversity-bg.png');"></div>
+                        <div class="awareness-card-overlay"></div>
+                        <div class="awareness-card-top">
+                            <span class="awareness-number">03</span>
+                        </div>
+                        <div class="awareness-content">
+                            <h3 class="awareness-title">Biodiversity Conservation</h3>
+                            <p class="awareness-desc">Protecting trees, wildlife, native plant species and nurturing sustainable local campus ecosystems.</p>
+                        </div>
+                        <a href="#awareness-modal" class="awareness-footer awareness-modal-trigger" data-title="Biodiversity Conservation" data-desc="Protecting trees, wildlife, native plant species and nurturing sustainable local campus ecosystems." data-actions="Mapping and census of campus flora &amp; fauna|Nurturing native plant species &amp; green cover|Campus bird &amp; urban wildlife protection|Seasonal tree plantation &amp; soil care">
+                            <span>KEY FOCUS</span>
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 04 Energy & Climate Action -->
+                <div class="col-md-6 col-sm-6 col-xs-12 awareness-col">
+                    <div class="awareness-card wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="awareness-card-bg" style="background-image: url('assets/img/energy-climate-bg.png');"></div>
+                        <div class="awareness-card-overlay"></div>
+                        <div class="awareness-card-top">
+                            <span class="awareness-number">04</span>
+                        </div>
+                        <div class="awareness-content">
+                            <h3 class="awareness-title">Energy &amp; Climate Action</h3>
+                            <p class="awareness-desc">Energy conservation, advocating renewable energy adoption and reducing overall carbon emissions.</p>
+                        </div>
+                        <a href="#awareness-modal" class="awareness-footer awareness-modal-trigger" data-title="Energy &amp; Climate Action" data-desc="Energy conservation, advocating renewable energy adoption and reducing overall carbon emissions." data-actions="Transition to energy-efficient LED campus lighting|Solar power generation &amp; renewable integration|Smart power management in classrooms &amp; labs|Promoting net-zero carbon campus habits">
+                            <span>KEY FOCUS</span>
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 05 Sustainable Living -->
+                <div class="col-md-6 col-sm-6 col-xs-12 awareness-col">
+                    <div class="awareness-card wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="awareness-card-bg" style="background-image: url('assets/img/sustainable-living-bg.png');"></div>
+                        <div class="awareness-card-overlay"></div>
+                        <div class="awareness-card-top">
+                            <span class="awareness-number">05</span>
+                        </div>
+                        <div class="awareness-content">
+                            <h3 class="awareness-title">Sustainable Living</h3>
+                            <p class="awareness-desc">Simple, environmentally responsible daily habits that students can adopt in everyday campus life.</p>
+                        </div>
+                        <a href="#awareness-modal" class="awareness-footer awareness-modal-trigger" data-title="Sustainable Living" data-desc="Simple, environmentally responsible daily habits that students can adopt in everyday campus life." data-actions="Carrying reusable water bottles &amp; cloth bags|Digital-first paperless documentation practice|Walking &amp; public transportation promotion|Eco-conscious daily student habits">
+                            <span>KEY FOCUS</span>
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-    </section> -->
-    <!--REPORT AREA END-->
+    </section>
+    <!-- ENVIRONMENTAL AWARENESS SECTION END -->
+
+    <!-- AWARENESS DETAIL MODAL -->
+    <div id="awareness-modal" class="awareness-modal-overlay" aria-hidden="true">
+        <div class="awareness-modal-box">
+            <button type="button" class="awareness-modal-close" aria-label="Close modal">&times;</button>
+            <span class="awareness-modal-badge">SIE ACTION FOCUS</span>
+            <h3 id="modal-topic-title" class="awareness-modal-title">Topic Title</h3>
+            <p id="modal-topic-desc" class="awareness-modal-desc">Topic description...</p>
+            <div class="awareness-modal-actions">
+                <h4>Core Focus Areas:</h4>
+                <ul id="modal-topic-actions-list">
+                    <!-- Populated dynamically via JS -->
+                </ul>
+            </div>
+            <div class="awareness-modal-footer">
+                <button type="button" class="read-more awareness-modal-close-btn">Close Details</button>
+            </div>
+        </div>
+    </div>
+    <!-- AWARENESS DETAIL MODAL END -->
 
     <!--ABOUT AREA-->
     <section class="about-area padding-top sky-gray-bg wow fadeIn" id="about">
@@ -251,86 +319,6 @@
         </div>
     </section>
     <!--ABOUT AREA END-->
-
-    <!-- TESTMONIAL AREA TWO-->
-    <section class="testimonials-style-five padding-top">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3 col-sm-12 col-xs-12">
-                    <div class="area-title text-center">
-                        <h2>Ambitions</h2>
-                        <!-- <p>What people have to say about us</p> -->
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="testmonial-style-five">
-                        <div class="row">
-                            <div class="col-md-8 col-md-offset-2 col-xs-12">
-                                <div class="testmonial-details-content center">
-                                    <div class="testmonial-details">
-                                        <div class="slide-item">
-                                            <div class="single-testimonial">
-                                                <div class="author-content">
-                                                    <img src="assets/img/quotes.webp" alt="" />
-                                                    <p>"To instill a sense of responsibility towards the
-                                                        environment and a personal commitment to
-                                                        preserve it."
-                                                    </p>
-                                                    <!-- <h3>Sasha Pais</h3>
-                                                    <p>Founder, DBIT SevaTech</p> -->
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="slide-item">
-                                            <div class="single-testimonial">
-                                                <div class="author-content">
-                                                    <img src="assets/img/quotes.webp" alt="" />
-                                                    <p>"To create a carbon neutral campus (Net zero
-                                                        carbon emission)."</p>
-                                                    <!-- <h3>Ruvin Rodrigues</h3>
-                                                    <p>Founder, DBIT SevaTech</p> -->
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="slide-item">
-                                            <div class="single-testimonial">
-                                                <div class="author-content">
-                                                    <img src="assets/img/quotes.webp" alt="" />
-                                                    <p>"To train students/faculty/staff to efficiently
-                                                        implement sustainability projects."</p>
-                                                    <!-- <h3>Samara Pires</h3>
-                                                    <p>Founder, DBIT SevaTech</p> -->
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-md-offset-3 col-xs-12">
-                                <div class="testmonial-photo-list">
-                                    <div class="testimonial-photo">
-                                        <div class="single-testmonial-photo"><img 
-                                                src="" alt="" /></div>
-                                        <div class="single-testmonial-photo"><img 
-                                                src="" alt="" /></div>
-                                        <div class="single-testmonial-photo"><img
-                                                src="" alt="" /></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="teamslide_nav">
-                        <div class="testi_prev"><i class="fa fa-long-arrow-left"></i></div>
-                        <div class="testi_next"><i class="fa fa-long-arrow-right"></i></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--TESTMONIAL AREA TWO END -->
 
     <!--PRICING AREA AREA-->
     <!-- <section class="pricing-area padding-top wow fadeIn" id="pricing">
@@ -450,281 +438,7 @@
     </section> -->
     <!--PRICING AREA AREA END-->
 
-    <!--TEAM AREA-->
-    <section class="team-area padding-top" id="team">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3 col-sm-12 col-xs-12">
-                    <div class="area-title text-center">
-                        <h2>SIE's First Core</h2>
-                        <p>People who lead the organization</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
-                    <div class="single-team-four mb30 center wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="member-image">
-                            <img src="assets/img/team/Shivaam.webp" alt="Ruvin Rodrigues">
-                        </div>
-                        <div class="member-details">
-                            <div class="name-and-designation">
-                                <h4>Shivaam Singh</h4>
-                                <p>Chairperson</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
-                    <div class="single-team-four mb30 center wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="member-image">
-                            <img src="assets/img/team/Malvika.webp" alt="Shawn Louis">
-                        </div>
-                        <div class="member-details">
-                            <div class="name-and-designation">
-                                <h4>Malvika Shetty</h4>
-                                <p>Vice Chairperson</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
-                    <div class="single-team-four mb30 center wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="member-image">
-                            <img src="assets/img/team/Nitin.webp" alt="Hayden Cordeiro">
-                        </div>
-                        <div class="member-details">
-                            <div class="name-and-designation">
-                                <h4>Nitin Kak</h4>
-                                <p>Vice Chairperson</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
-                    <div class="single-team-four mb30 center wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="member-image">
-                            <img src="assets/img/team/riona.webp" alt="Riona D'souza">
-                        </div>
-                        <div class="member-details">
-                            <div class="name-and-designation">
-                                <h4>Riona D'souza</h4>
-                                <p>Marketing and Social Media Head</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
-                    <div class="single-team-four mb30 center wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="member-image">
-                            <img src="assets/img/team/Malvika.webp" alt="Grejo Joby">
-                        </div>
-                        <div class="member-details">
-                            <div class="name-and-designation">
-                                <h4>Fiona Coutinho</h4>
-                                <p>Design Head</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
-                    <div class="single-team-four mb30 center wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="member-image">
-                            <img src="assets/img/team/Tanmay.webp" alt="Grejo Joby">
-                        </div>
-                        <div class="member-details">
-                            <div class="name-and-designation">
-                                <h4>Tanmay Salunke</h4>
-                                <p>Technical Head</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
-                    <div class="single-team-four mb30 center wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="member-image">
-                            <img src="assets/img/team/Malvika.webp" alt="Grejo Joby">
-                        </div>
-                        <div class="member-details">
-                            <div class="name-and-designation">
-                                <h4>Vaishanavi Ransubhe</h4>
-                                <p>Technical Head</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
-                    <div class="single-team-four mb30 center wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="member-image">
-                            <img src="assets/img/team/Nesline.webp" alt="Grejo Joby">
-                        </div>
-                        <div class="member-details">
-                            <div class="name-and-designation">
-                                <h4>Nesline D'silva</h4>
-                                <p>Documentation Head</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3 col-sm-12 col-xs-12">
-                    <div class="area-title text-center">
-                        <h2>SIE's Core</h2>
-                        <p>People who lead the organization</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
-                    <div class="single-team-four mb30 center wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="member-image">
-                            <img src="assets/img/team/Ravi.webp" alt="Ravi Pandey">
-                        </div>
-                        <div class="member-details">
-                            <div class="name-and-designation">
-                                <h4>Ravi Pandey</h4>
-                                <p>Chairperson</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
-                    <div class="single-team-four mb30 center wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="member-image">
-                            <img src="assets/img/team/rhea.webp" alt="Rhea D'souza">
-                        </div>
-                        <div class="member-details">
-                            <div class="name-and-designation">
-                                <h4>Rhea D'souza</h4>
-                                <p>Vice Chairperson</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
-                    <div class="single-team-four mb30 center wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="member-image">
-                            <img src="assets/img/team/Manish.webp" alt="Manish Shingre">
-                        </div>
-                        <div class="member-details">
-                            <div class="name-and-designation">
-                                <h4>Manish Shingre</h4>
-                                <p>Treasurer</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
-                    <div class="single-team-four mb30 center wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="member-image">
-                            <img src="assets/img/team/Shubham.webp" alt="Shubham Talawadekar">
-                        </div>
-                        <div class="member-details">
-                            <div class="name-and-designation">
-                                <h4>Shubham Talawadekar</h4>
-                                <p>Technical Head</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
-                    <div class="single-team-four mb30 center wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="member-image">
-                            <img src="assets/img/team/Aniket.webp" alt="Aniket Parate">
-                        </div>
-                        <div class="member-details">
-                            <div class="name-and-designation">
-                                <h4>Aniket Parate</h4>
-                                <p>Technical Head</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
-                    <div class="single-team-four mb30 center wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="member-image">
-                            <img src="assets/img/team/Sanika.webp" alt="Grejo Joby">
-                        </div>
-                        <div class="member-details">
-                            <div class="name-and-designation">
-                                <h4>Sanika Surve</h4>
-                                <p>Design Head</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
-                    <div class="single-team-four mb30 center wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="member-image">
-                            <img src="assets/img/team/Likla.webp" alt="Grejo Joby">
-                        </div>
-                        <div class="member-details">
-                            <div class="name-and-designation">
-                                <h4>Likla Sinha</h4>
-                                <p>Design Head</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
-                    <div class="single-team-four mb30 center wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="member-image">
-                            <img src="assets/img/team/Raveena.webp" alt="Grejo Joby">
-                        </div>
-                        <div class="member-details">
-                            <div class="name-and-designation">
-                                <h4>Raveena Pitale</h4>
-                                <p>Marketing Head</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
-                    <div class="single-team-four mb30 center wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="member-image">
-                            <img src="assets/img/team/Viraj.webp" alt="Grejo Joby">
-                        </div>
-                        <div class="member-details">
-                            <div class="name-and-designation">
-                                <h4>Viraj Vidyadharan</h4>
-                                <p>Marketing Head</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
-                    <div class="single-team-four mb30 center wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="member-image">
-                            <img src="assets/img/team/Riean.webp" alt="Grejo Joby">
-                        </div>
-                        <div class="member-details">
-                            <div class="name-and-designation">
-                                <h4>Riean Esteves</h4>
-                                <p>Documentation Head</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
-                    <div class="single-team-four mb30 center wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="member-image">
-                            <img src="assets/img/team/Aryaman.webp" alt="Grejo Joby">
-                        </div>
-                        <div class="member-details">
-                            <div class="name-and-designation">
-                                <h4>Aryaman Mahajan</h4>
-                                <p>Social Media Head</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--TEAM AREA END-->
+
 
     <!--BLOG AREA-->
     <!-- <section class="blog-area padding-100-50 wow fadeIn" id="news">
@@ -802,31 +516,7 @@
         </div>
     </section> -->
 
-    <!-- REPORT AREA -->
-    <!-- <div class="padding-100-50 wow fadeIn"> -->
-    <div class="padding-bottom wow fadeIn">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3 col-sm-12 col-xs-12">
-                    <div class="area-title text-center">
-                        <h2>DBIT Sie Club Brochure</h2>
-                        <!-- <p>Reports Subtext</p> -->
-                    </div>
-                    <div class="report-flex">
-                        <div class="report-file">
-                            <img class="pdf-ico"
-                                src="https://coderthemes.com/highdmin/layouts/assets/images/file_icons/pdf.svg"
-                                alt="pdf-ico">
-                            <a href="reports/DBIT SIE Brochure.pdf" class="read-more" download="">
-                                <i class="fa fa-download"></i>Download
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- REPORT AREA END -->
+
 
     <!--BLOG AREA END-->
 
@@ -1015,6 +705,58 @@
             });
         })
 
+        // Environmental Awareness Modal Interaction
+        document.addEventListener('DOMContentLoaded', function () {
+            var triggers = document.querySelectorAll('.awareness-modal-trigger');
+            var modal = document.getElementById('awareness-modal');
+            if (!modal) return;
+
+            var modalTitle = document.getElementById('modal-topic-title');
+            var modalDesc = document.getElementById('modal-topic-desc');
+            var modalList = document.getElementById('modal-topic-actions-list');
+            var closeBtns = document.querySelectorAll('.awareness-modal-close, .awareness-modal-close-btn');
+
+            triggers.forEach(function (btn) {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var title = btn.getAttribute('data-title');
+                    var desc = btn.getAttribute('data-desc');
+                    var actionsRaw = btn.getAttribute('data-actions') || '';
+                    var actions = actionsRaw.split('|');
+
+                    if (modalTitle) modalTitle.textContent = title;
+                    if (modalDesc) modalDesc.textContent = desc;
+
+                    if (modalList) {
+                        modalList.innerHTML = '';
+                        actions.forEach(function (act) {
+                            if (act.trim()) {
+                                var li = document.createElement('li');
+                                li.innerHTML = '<i class="fa fa-check-circle" aria-hidden="true"></i> <span>' + act.trim() + '</span>';
+                                modalList.appendChild(li);
+                            }
+                        });
+                    }
+
+                    modal.classList.add('active');
+                    modal.setAttribute('aria-hidden', 'false');
+                });
+            });
+
+            closeBtns.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    modal.classList.remove('active');
+                    modal.setAttribute('aria-hidden', 'true');
+                });
+            });
+
+            modal.addEventListener('click', function (e) {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    modal.setAttribute('aria-hidden', 'true');
+                }
+            });
+        });
     </script>
 </body>
 
