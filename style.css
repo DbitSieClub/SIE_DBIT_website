@@ -26,7 +26,6 @@
     left: auto;
     right: 0;
 }
-
 .right-layer {
     position: absolute;
     width: 39%;
@@ -777,7 +776,7 @@ body.single-page {
 }
 
 .page-barner-area .area-bg {
-    background: rgba(0, 0, 0, 0) url("assest/img/blog-bg.html") no-repeat scroll center center / cover;
+    background: rgba(0, 0, 0, 0) url("assets/img/banner.webp") no-repeat scroll center center / cover;
 }
 
 /*-------------------
@@ -1509,6 +1508,634 @@ ul.children {
 }
 
 /* =========================================
+   FEEDBACK CTA
+   ========================================= */
+
+.sie-feedback-area {
+    background: #f4f8f5;
+    border-top: 1px solid #dce8dd;
+    border-bottom: 1px solid #dce8dd;
+    padding: 84px 0 88px;
+}
+
+.sie-feedback-content {
+    background: #ffffff;
+    border: 1px solid #d5e2d7;
+    border-radius: 12px;
+    box-shadow: 0 10px 26px rgba(6, 35, 16, 0.07);
+    margin: 0 auto;
+    max-width: 760px;
+    padding: 48px 30px 52px;
+    text-align: center;
+}
+
+.sie-feedback-mark {
+    color: #4d8b56;
+    display: block;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.sie-feedback-content h2 {
+    color: #061d12;
+    font-family: 'Outfit', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 12px;
+}
+
+.sie-feedback-content p {
+    color: #526c59;
+    font-size: 16px;
+    line-height: 1.65;
+    margin: 0 auto 27px;
+    max-width: 560px;
+}
+
+.sie-feedback-button {
+    background: #1b8d38;
+    border: 1px solid #1b8d38;
+    border-radius: 3px;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    padding: 13px 21px;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.sie-feedback-button:hover {
+    background: #146d2b;
+    border-color: #146d2b;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+@media only screen and (max-width: 767px) {
+    .sie-feedback-area {
+        padding: 56px 15px 60px;
+    }
+
+    .sie-feedback-content {
+        padding: 36px 20px 40px;
+    }
+
+    .sie-feedback-content h2 {
+        font-size: 27px;
+    }
+
+    .sie-feedback-content p {
+        font-size: 15px;
+    }
+
+    .sie-feedback-button {
+        min-height: 48px;
+    }
+}
+
+/* =========================================
+   SIE HERO – 3D INTERACTIVE LANDING (REDESIGN)
+   Reference: sie-club-hero.png – aerial forest canopy
+   with 3D grass-textured "SIE CLUB" lettering
+   ========================================= */
+
+/* ── Base hero container ── */
+.sie-hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 680px;
+    max-height: 1080px;
+    overflow: hidden;
+    background: #061d12; /* deep forest fallback */
+    display: flex;
+    align-items: flex-end; /* position text in lower portion so 3D background letters are visible */
+    justify-content: center;
+    padding: 0 0 35px;
+    margin-top: 0;
+}
+
+/* ── Three.js canvas (leaf particles) ── */
+#sie-hero-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    display: block;
+}
+
+/* ── Forest background image with parallax ── */
+.sie-hero-bg {
+    position: absolute;
+    inset: -6% -6%; /* extra bleed for parallax movement */
+    background-image: url('assets/img/sie-club-hero.png');
+    background-size: cover;
+    background-position: center 40%; /* position 3D SIE CLUB letters in upper middle area */
+    background-repeat: no-repeat;
+    z-index: 1;
+    will-change: transform;
+    transition: transform 0.08s linear;
+    image-rendering: -webkit-optimize-contrast; /* sharper rendering */
+}
+
+/* ── Atmospheric mist at top (matches reference image fog) ── */
+.sie-hero-mist {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 45%;
+    background: linear-gradient(
+        180deg,
+        rgba(200, 230, 210, 0.55) 0%,
+        rgba(180, 215, 195, 0.30) 35%,
+        rgba(100, 160, 120, 0.10) 70%,
+        transparent 100%
+    );
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* ── Bottom-to-centre dark vignette for text legibility ── */
+.sie-hero-vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        ellipse 100% 90% at 50% 80%,
+        rgba(4, 15, 8, 0.72) 0%,
+        rgba(6, 29, 18, 0.50) 45%,
+        transparent 75%
+    );
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* ── CSS floating leaf accents ── */
+.sie-hero-leaf-accent {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 4;
+    animation: sie-leaf-float 8s ease-in-out infinite;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
+
+.sie-leaf-1 {
+    top: 18%;
+    left: 8%;
+    animation-delay: 0s;
+    animation-duration: 9s;
+    font-size: 2.4rem;
+}
+
+.sie-leaf-2 {
+    top: 30%;
+    right: 10%;
+    animation-delay: 3s;
+    animation-duration: 11s;
+    font-size: 1.8rem;
+}
+
+.sie-leaf-3 {
+    bottom: 30%;
+    left: 15%;
+    animation-delay: 6s;
+    animation-duration: 8s;
+    font-size: 2rem;
+}
+
+@keyframes sie-leaf-float {
+    0%   { opacity: 0; transform: translateY(0px) rotate(-10deg) scale(0.85); }
+    15%  { opacity: 0.65; }
+    50%  { opacity: 0.5;  transform: translateY(-28px) rotate(8deg) scale(1.05); }
+    85%  { opacity: 0.55; }
+    100% { opacity: 0;  transform: translateY(-50px) rotate(18deg) scale(0.9); }
+}
+
+/* ── Main content overlay ── */
+.sie-hero-content {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    padding: 0 20px;
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+
+/* ── Badge ── */
+.sie-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(10, 40, 18, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(140, 233, 122, 0.35);
+    border-radius: 50px;
+    color: #c8f5b0;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    padding: 7px 20px;
+    margin-bottom: 28px;
+    animation: sie-fade-up 0.8s ease both;
+    animation-delay: 0.2s;
+}
+
+.sie-badge-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.3);
+    animation: sie-pulse 2s ease infinite;
+}
+
+@keyframes sie-pulse {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(74,222,128,0.35); }
+    50%       { box-shadow: 0 0 0 7px rgba(74,222,128,0.08); }
+}
+
+/* ── Main title – 3D embossed nature lettering ── */
+.sie-hero-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(2.8rem, 6.5vw, 4.8rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin: 0 0 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3em;
+    animation: sie-fade-up 0.9s ease both;
+    animation-delay: 0.4s;
+}
+
+.sie-title-line {
+    display: inline-block;
+    /* 3D grass/nature letter effect matching the reference image */
+    color: #a8f57a;
+    background: linear-gradient(
+        175deg,
+        #c8ff96 0%,
+        #8ce97a 30%,
+        #4ade80 60%,
+        #15803d 85%,
+        #166534 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* Layered text shadows to simulate 3D depth like the reference */
+    filter: drop-shadow(0 2px 0 rgba(10,50,10,0.9))
+            drop-shadow(0 4px 2px rgba(6,30,12,0.8))
+            drop-shadow(0 8px 6px rgba(0,0,0,0.5))
+            drop-shadow(0 16px 20px rgba(0,0,0,0.35));
+    text-shadow: none; /* shadow via filter when using background-clip */
+    position: relative;
+}
+
+/* ── Subtitle ── */
+.sie-hero-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1rem, 1.8vw, 1.25rem);
+    font-weight: 500;
+    color: rgba(230, 255, 230, 0.95);
+    line-height: 1.6;
+    margin: 0;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.85);
+    animation: sie-fade-up 0.9s ease both;
+    animation-delay: 0.6s;
+}
+
+.sie-subtitle-emphasis {
+    color: #b9f5a0;
+    font-weight: 500;
+}
+
+/* ── CTA Buttons ── */
+.sie-hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 48px;
+    animation: sie-fade-up 0.9s ease both;
+    animation-delay: 0.8s;
+}
+
+.sie-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #1ba329 0%, #22c55e 100%);
+    color: #ffffff !important;
+    font-family: 'Inter', sans-serif;
+    font-size: 14.5px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none !important;
+    border: 2px solid transparent;
+    box-shadow: 0 8px 24px rgba(27, 163, 41, 0.5),
+                0 0 0 0 rgba(74, 222, 128, 0);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.sie-btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #22c55e 0%, #4ade80 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sie-btn-primary:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 14px 32px rgba(27, 163, 41, 0.65),
+                0 0 0 6px rgba(74, 222, 128, 0.15);
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+.sie-btn-primary:hover::before { opacity: 1; }
+
+.sie-btn-primary span,
+.sie-btn-primary i {
+    position: relative;
+    z-index: 1;
+}
+
+.sie-btn-primary i {
+    transition: transform 0.3s ease;
+    font-size: 13px;
+}
+.sie-btn-primary:hover i { transform: translateX(5px); }
+
+.sie-btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    color: #e2fce8 !important;
+    font-family: 'Inter', sans-serif;
+    font-size: 14.5px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none !important;
+    border: 1.5px solid rgba(140, 233, 122, 0.45);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.sie-btn-ghost:hover {
+    background: rgba(140, 233, 122, 0.15);
+    border-color: rgba(140, 233, 122, 0.8);
+    color: #ffffff !important;
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.3),
+                0 0 0 4px rgba(140, 233, 122, 0.1);
+    text-decoration: none !important;
+}
+
+/* ── Impact Stats Strip ── */
+.sie-hero-stats {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: rgba(6, 20, 10, 0.45);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(140, 233, 122, 0.2);
+    border-radius: 20px;
+    padding: 18px 36px;
+    animation: sie-fade-up 1s ease both;
+    animation-delay: 1s;
+}
+
+.sie-stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 28px;
+}
+
+.sie-stat-number {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-weight: 800;
+    color: #8ce97a;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.sie-stat-plus {
+    font-size: 0.7em;
+    color: #4ade80;
+}
+
+.sie-stat-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(200, 245, 190, 0.75);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-top: 3px;
+}
+
+.sie-stat-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(140, 233, 122, 0.25);
+}
+
+/* ── Scroll indicator ── */
+.sie-hero-scroll-indicator {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    z-index: 6;
+    animation: sie-fade-in 1.2s ease both;
+    animation-delay: 1.4s;
+}
+
+.sie-scroll-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: rgba(180, 240, 170, 0.7);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.sie-scroll-track {
+    width: 22px;
+    height: 36px;
+    border: 1.5px solid rgba(140, 233, 122, 0.4);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+}
+
+.sie-scroll-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #4ade80;
+    animation: sie-scroll-bounce 1.8s ease infinite;
+}
+
+@keyframes sie-scroll-bounce {
+    0%    { transform: translateY(0);    opacity: 1; }
+    60%   { transform: translateY(14px); opacity: 0.3; }
+    100%  { transform: translateY(0);    opacity: 1; }
+}
+
+/* ── Shared entry animation ── */
+@keyframes sie-fade-up {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes sie-fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* ── Reduced-motion: disable decorative animations ── */
+@media (prefers-reduced-motion: reduce) {
+    .sie-hero-leaf-accent,
+    .sie-badge-dot,
+    .sie-scroll-dot,
+    .sie-hero-badge,
+    .sie-hero-title,
+    .sie-hero-subtitle,
+    .sie-hero-buttons,
+    .sie-hero-stats,
+    .sie-hero-scroll-indicator {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    .sie-hero-bg { transition: none !important; }
+}
+
+/* ── Responsive: Tablet (768px – 1024px) ── */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .sie-hero {
+        min-height: 600px;
+        height: 90vh;
+    }
+    .sie-hero-stats {
+        padding: 14px 20px;
+        gap: 0;
+    }
+    .sie-stat-item {
+        padding: 0 18px;
+    }
+}
+
+/* ── Responsive: Mobile (≤ 767px) ── */
+@media only screen and (max-width: 767px) {
+    .sie-hero {
+        height: 100svh;
+        min-height: 580px;
+        max-height: none;
+    }
+
+    .sie-hero-bg {
+        background-position: 35% center;
+    }
+
+    .sie-hero-title {
+        font-size: clamp(4.5rem, 22vw, 7rem);
+    }
+
+    .sie-hero-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .sie-hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .sie-btn-primary,
+    .sie-btn-ghost {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+        padding: 13px 28px;
+    }
+
+    .sie-hero-stats {
+        padding: 14px 16px;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+        border-radius: 16px;
+    }
+
+    .sie-stat-item {
+        padding: 0 12px;
+    }
+
+    .sie-stat-divider {
+        display: none;
+    }
+
+    .sie-hero-leaf-accent {
+        font-size: 1.6rem;
+    }
+
+    .sie-leaf-2 { display: none; } /* reduce clutter on small screens */
+}
+
+/* ── Very small phones (≤ 390px) ── */
+@media only screen and (max-width: 390px) {
+    .sie-hero-title {
+        font-size: clamp(3.8rem, 20vw, 5.5rem);
+    }
+    .sie-hero-badge {
+        font-size: 10px;
+        padding: 6px 14px;
+    }
+}
+.is-sticky .nav-brand-text {
+    color: #8ce97a !important;
+}
+
+/* =========================================
    OUR MISSION ENHANCEMENTS
    ========================================= */
 
@@ -1550,6 +2177,11 @@ ul.children {
     width: 100%;
     overflow: hidden;
     position: relative;
+}
+
+.mission-card-netzero .mission-card-img {
+    aspect-ratio: 735 / 491;
+    height: auto;
 }
 
 .mission-card-img img {
@@ -1916,6 +2548,7 @@ ul.children {
     height: 48px;
     width: auto;
     max-width: 48px;
+    border-radius: 50%;
     object-fit: contain;
     transition: transform 0.3s ease;
 }
@@ -1932,6 +2565,50 @@ ul.children {
     line-height: 1;
 }
 
+.sie-social-nav-item {
+    align-items: center;
+    display: inline-flex !important;
+    margin-left: 10px !important;
+    vertical-align: middle;
+}
+
+.sie-social-link-group {
+    align-items: center;
+    display: inline-flex;
+    gap: 8px;
+}
+
+.sie-social-link-group a {
+    align-items: center;
+    color: #ffffff;
+    display: inline-flex;
+    font-size: 19px !important;
+    height: 40px;
+    justify-content: center;
+    padding: 0 6px !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
+    transition: color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+    width: 30px;
+}
+
+.sie-social-link-group a:hover {
+    color: #c6f05a;
+    opacity: 0.9;
+    transform: scale(1.08);
+}
+
+.is-sticky .sie-social-link-group a {
+    color: #dff6b4;
+    text-shadow: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .sie-social-nav-item {
+        position: relative;
+        top: 18px;
+    }
+}
+
 @media only screen and (max-width: 767px) {
     .nav-logo-img {
         height: 38px;
@@ -1940,5 +2617,363 @@ ul.children {
     .nav-brand-text {
         font-size: 20px;
     }
+    .sie-social-nav-item {
+        display: flex !important;
+        justify-content: center;
+        margin: 8px 0 14px !important;
+        padding: 0;
+    }
+    .sie-social-link-group {
+        gap: 16px;
+    }
+    .sie-social-link-group a {
+        font-size: 18px !important;
+        height: 38px;
+        padding: 0 12px !important;
+        width: 38px;
+    }
 }
+
+/* =========================================
+   TRANSPARENT NAVBAR OVERRIDE
+   ========================================= */
+
+.home-three .mainmenu-area-bg,
+.mainmenu-area-bg {
+    background: transparent !important;
+}
+
+.header-top-area .mainmenu-area {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* Nav brand text - bright green over transparent hero */
+.header-top-area .nav-brand-text {
+    color: #a8f57a !important;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* Nav links - white/light green over transparent hero */
+.header-top-area ul#nav li a {
+    color: #ffffff !important;
+    font-weight: 500;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.header-top-area ul#nav li a:hover,
+.header-top-area ul#nav li.active > a {
+    color: #8ce97a !important;
+    text-shadow: 0 0 10px rgba(140, 233, 122, 0.6);
+}
+
+/* Sticky state: dark forest green background when scrolling down */
+.is-sticky .mainmenu-area {
+    background: rgba(6, 25, 14, 0.92) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+.is-sticky .nav-brand-text {
+    color: #8ce97a !important;
+}
+
+.is-sticky ul#nav li a {
+    color: rgba(230, 255, 230, 0.95) !important;
+}
+
+/* =========================================
+   CORE TEAM / LEADERSHIP SECTION STYLES
+   ========================================= */
+
+.sie-team-area {
+    background: linear-gradient(180deg, #f4f8f5 0%, #ebf3ed 100%);
+    position: relative;
+    border-bottom: 1px solid #dce8dd;
+    overflow: hidden;
+}
+
+.sie-team-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(21, 128, 61, 0.1);
+    border: 1px solid rgba(21, 128, 61, 0.25);
+    color: #15803d;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 14px;
+}
+
+.sie-team-eyebrow {
+    color: #2f7040;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.sie-team-heading {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 800;
+    color: #061d12;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+.sie-team-subtitle {
+    font-size: 16px;
+    color: #3b6b47;
+    max-width: 620px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+/* ── Group Photo Hero Frame ── */
+.sie-group-photo-card {
+    max-width: 1080px;
+    margin: 0 auto 60px;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 16px 40px rgba(6, 30, 14, 0.12);
+    border: 1px solid rgba(74, 222, 128, 0.25);
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    perspective: 1000px;
+}
+
+.sie-group-photo-card:hover {
+    box-shadow: 0 24px 48px rgba(6, 30, 14, 0.2);
+    border-color: rgba(74, 222, 128, 0.45);
+}
+
+.sie-group-photo-wrapper {
+    aspect-ratio: 6000 / 3376;
+    height: auto;
+    max-height: none;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #0d3619;
+}
+
+.sie-group-photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.sie-group-photo-card:hover .sie-group-photo-img {
+    transform: scale(1.03);
+}
+
+.sie-group-photo-caption {
+    background: #ffffff;
+    border-top: 1px solid #d5e2d7;
+    color: #2f7040;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    padding: 16px 20px 17px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* ── Hierarchical Card Grids ── */
+.sie-team-grid-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.sie-team-tier {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 28px;
+}
+
+.sie-team-card-col {
+    display: flex;
+    justify-content: center;
+}
+
+/* ── Individual 3D Member Card ── */
+.sie-team-card {
+    background: #ffffff;
+    border: 1px solid #d5e2d7;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 22px rgba(6, 25, 14, 0.09);
+    transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+    position: relative;
+    will-change: transform;
+    transform-style: preserve-3d;
+}
+
+.sie-team-card:hover {
+    box-shadow: 0 15px 30px rgba(6, 35, 16, 0.16);
+    border-color: #b8cfbc;
+}
+
+/* Featured Modifier (Chairperson & Vice Chairperson) */
+.sie-card-featured {
+    width: 350px;
+    border: 1px solid #b8cfbc;
+    box-shadow: 0 10px 26px rgba(6, 35, 16, 0.12);
+}
+
+.sie-card-featured .sie-card-photo-wrapper {
+    height: auto;
+}
+
+.sie-card-featured .sie-card-name {
+    font-size: 20px;
+}
+
+.sie-card-photo-wrapper {
+    aspect-ratio: 6000 / 3376;
+    height: auto;
+    position: relative;
+    width: 100%;
+    background: #e8f0e9;
+    border-bottom: 1px solid #d5e2d7;
+    overflow: hidden;
+}
+
+.sie-team-photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.sie-team-card:hover .sie-team-photo-img {
+    transform: scale(1.025);
+}
+
+.sie-card-body {
+    min-height: 118px;
+    padding: 20px 18px 21px;
+    text-align: center;
+    background: #ffffff;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sie-card-name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: #082813;
+    margin: 0 0 6px;
+    line-height: 1.25;
+}
+
+.sie-card-role {
+    color: #607566;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.35;
+    margin: 0 0 13px;
+}
+
+.sie-card-brand {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #1ba329;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+/* Advisor Card Modifier */
+.sie-card-advisor {
+    border-color: #d7d7c7;
+}
+
+.sie-card-advisor .sie-card-brand {
+    color: #d97706;
+}
+
+/* ── Entrance Animations ── */
+.sie-team-animate {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.sie-team-animate.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger delay for cards */
+.sie-team-tier .sie-team-card-col:nth-child(1) .sie-team-animate { transition-delay: 0.1s; }
+.sie-team-tier .sie-team-card-col:nth-child(2) .sie-team-animate { transition-delay: 0.2s; }
+.sie-team-tier .sie-team-card-col:nth-child(3) .sie-team-animate { transition-delay: 0.3s; }
+
+/* ── Mobile Responsive Overrides ── */
+@media only screen and (max-width: 991px) {
+    .sie-team-tier {
+        gap: 20px;
+    }
+    .sie-card-featured {
+        width: 340px;
+    }
+    .sie-team-card {
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .sie-team-heading {
+        font-size: 2.2rem;
+    }
+    .sie-group-photo-card {
+        margin-bottom: 40px;
+    }
+    .sie-group-photo-caption {
+        font-size: 10px;
+        letter-spacing: 1.1px;
+        padding: 13px 12px 14px;
+    }
+    .sie-team-tier {
+        gap: 16px;
+    }
+    .sie-card-featured,
+    .sie-team-card {
+        width: 100%;
+        max-width: 360px;
+    }
+    .sie-card-photo-wrapper,
+    .sie-card-featured .sie-card-photo-wrapper {
+        height: auto;
+    }
+}
+
+
 
